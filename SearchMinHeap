@@ -1,0 +1,34 @@
+package crt;
+public class SearchMinHeap {
+
+    // Function to search for a key in the Min-Heap
+    static boolean search(int[] heap, int n, int key) {
+        for (int i = 0; i < n; i++) {
+            if (heap[i] == key) {
+                return true; // Found
+            }
+        }
+        return false; // Not found
+    }
+
+    // Utility function to print result
+    static void printSearchResult(int key, boolean found) {
+        if (found)
+            System.out.println("Key " + key + " found in the Min-Heap.");
+        else
+            System.out.println("Key " + key + " not found in the Min-Heap.");
+    }
+
+    // Driver code
+    public static void main(String[] args) {
+        // Example Min-Heap
+        int[] heap = {2, 5, 3, 10, 4};
+        int n = heap.length;
+
+        int key1 = 10;
+        int key2 = 7;
+
+        printSearchResult(key1, search(heap, n, key1)); // Should be found
+        printSearchResult(key2, search(heap, n, key2)); // Should not be found
+    }
+}
